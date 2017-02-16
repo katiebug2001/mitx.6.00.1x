@@ -18,16 +18,16 @@ def dict_interdiff(d1, d2):
     intersectDict = {}
     unionDict = {}
 
-    for keys in d1:
-        if keys in d2:
-            thisValue = f(d1[keys], d2[keys])
-            intersectDict[keys] = thisValue
+    for key in d1:
+        if key in d2:
+            thisValue = f(d1[key], d2[key])
+            intersectDict[key] = thisValue
         else:
-            unionDict[keys] = d1[keys]
+            unionDict[key] = d1[key]
 
-    for keys in d2:
-        if keys not in intersectDict:
-            unionDict[keys] = d2[keys]
+    for key in d2:
+        if key not in intersectDict:
+            unionDict[key] = d2[key]
 
     theTuple = (intersectDict, unionDict)
     #print(theTuple)

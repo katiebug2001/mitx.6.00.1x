@@ -28,7 +28,7 @@ def flatten(aList):
         #print('the new list is {}'.format(aNewList))
         if type(element) == list:
             #print('flattening the element{}'.format(element))
-            flatten_the_other_list(element)
+            aNewList.extend(flatten(element))
         else: 
             aNewList.append(element)
     return aNewList
